@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- always put your name in your work -->
+    <meta name="author" content="Robert C. Duvall">
+    <!-- stop the web browser from ever caching this page or its images -->
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- libraries neded for this page -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+    <!-- support for this page -->
+    <link rel="stylesheet" href="css/order_services.css">
+    <script src="js/order_services_class.js" async></script>
+    <title>Order Form</title>
+</head>
+<body>
+
+<!-- v-cloak hides any un-compiled data bindings until the Vue instance is ready. -->
+<div id="main" v-cloak>
+    <h1>Services</h1>
+    <ul>
+        <!-- Loop through the services array
+             - assign a click handler
+             - set or remove the "active" css class if needed -->
+        <li v-for="s in services" :class="{ active: s.active}" @click="toggleActive(s)">
+            <!-- Display name and price filtered to be formatted as currency -->
+            {{s.name}} <span>{{s.price | currency}}</span>
+        </li>
+    </ul>
+
+    <div class="total">
+        <!-- Show computed total price of all chosen services (formatted as currency) -->
+        Total: <span>{{total | currency}}</span>
+    </div>
+</div>
+
+</body>
+</html>

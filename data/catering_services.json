@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Preparation",
+        "price": 100,
+        "active": false
+    },
+    {
+        "name": "Delivery",
+        "price": 200,
+        "active": false
+    },
+    {
+        "name": "Decorating",
+        "price": 300,
+        "active": false
+    },
+    {
+        "name": "Ice Cream Truck",
+        "price": 400,
+        "active": false
+    },
+    {
+        "name": "Clean Up",
+        "price": 500,
+        "active": false
+    }
+]

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- always put your name in your work -->
+    <meta name="author" content="Robert C. Duvall">
+    <!-- stop the web browser from ever caching this page or its images -->
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- libraries neded for this page -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+    <!-- support for this page -->
+    <link rel="stylesheet" href="css/list_urls.css">
+    <script src="js/list_urls_class.js" async></script>
+    <title>List URLs</title>
+</head>
+<body>
+    <h1>My Favorite Sites</h1>
+
+    <div id="app">
+        <p>
+            <!-- <input id="button" type="button" value="Switch Links" @click="toggleLinks"/> -->
+            <button @click="toggleLinks">Switch Links</button>
+        </p>
+
+        <ul id="js-linklist">
+            <li class="link" v-for="l in links">
+                <!-- <a v-bind:href="l.url" v-text="l.name"></a> -->
+                <a :href="l.url">{{ l.name }}</a>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>
