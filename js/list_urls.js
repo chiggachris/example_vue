@@ -34,7 +34,7 @@ var app = new Vue({
             // - first function is called when the data is loaded
             // - second function is called when data is converted to JSON
             fetch(url).then(response => response.json())
-                      .then(data => self.addLinks(data))
+                      .then(data => this.addLinks(data))
                       .catch(error => console.log(error));
 
             // OR
